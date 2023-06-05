@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Page</title>
+    <style>
+    body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        background-color: #002240;
+        color: #fff;
+        font-family: Arial, sans-serif;
+    }
+    
+    .container {
+        width: 300px;
+        padding: 20px;
+        background-color: rgba(0, 0, 0, 0.8);
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+    
+    h1 {
+        text-align: center;
+    }
+    
+    label {
+        display: block;
+        margin-bottom: 5px;
+    }
+    
+    input[type="text"],
+    input[type="password"] {
+        width: 100%;
+        padding: 5px;
+        margin-bottom: 10px;
+        border-radius: 3px;
+        border: none;
+    }
+    
+    input[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        background-color: #4c72a4;
+        color: #fff;
+        border-radius: 3px;
+        border: none;
+        cursor: pointer;
+    }
+    </style>
+    <script>
+    window.addEventListener('load', function() {
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent form from submitting
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            if (username === "osama" && password === "osan1808") {
+                window.location.href = "page1.html"; // Redirect to the second page if login is successful
+            } else {
+                alert("Invalid username or password. Please try again.");
+            }
+        });
+    });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Login</h1>
+        <form id="loginForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username">
+            
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password">
+            
+            <input type="submit" value="Login">
+        </form>
+    </div>
+</body>
+</html>
